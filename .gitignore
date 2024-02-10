@@ -3,3 +3,4 @@ package-lock.json
 scheme.txt
 src
 tsconfig.json
+.env
