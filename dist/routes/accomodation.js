@@ -29,7 +29,7 @@ AccommodationRoute.route("/")
     .get((req, res) => {
     (0, db_1.db_run)((database) => __awaiter(void 0, void 0, void 0, function* () {
         const accomodationArray = yield AccomodationTable(database).find({}).toArray();
-        if (accomodationArray.length > 1) {
+        if (accomodationArray.length > 0) {
             res.status(200).json(accomodationArray);
         }
         else {
