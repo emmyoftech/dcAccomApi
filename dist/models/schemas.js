@@ -12,7 +12,7 @@ exports.AttendeeSchema = joi_1.default.object({
     email: joi_1.default.string().regex(/.*@.*/).required(),
     phone: joi_1.default.string().length(11).required(),
     category: joi_1.default.string().required(),
-    groupID: joi_1.default.string().required()
+    groupID: joi_1.default.string()
 });
 exports.FamilySchema = joi_1.default.object({
     _id: joi_1.default.string().optional(),
