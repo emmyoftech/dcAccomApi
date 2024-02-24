@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccomodationSchema = exports.GroupSchema = exports.FamilySchema = exports.AttendeeSchema = void 0;
+exports.PaymentDetailsSchema = exports.AccomodationSchema = exports.GroupSchema = exports.FamilySchema = exports.AttendeeSchema = void 0;
 const joi_1 = __importDefault(require("joi"));
 exports.AttendeeSchema = joi_1.default.object({
     _id: joi_1.default.string().optional(),
@@ -17,6 +17,7 @@ exports.AttendeeSchema = joi_1.default.object({
 exports.FamilySchema = joi_1.default.object({
     _id: joi_1.default.string().optional(),
     attendeeID: joi_1.default.string().required(),
+    attendeeName: joi_1.default.string().required(),
     spouseName: joi_1.default.string().required(),
     numChildren: joi_1.default.number().required()
 });
@@ -30,4 +31,8 @@ exports.AccomodationSchema = joi_1.default.object({
     _id: joi_1.default.string().optional(),
     attendeeID: joi_1.default.string().required(),
     accommodationType: joi_1.default.string().required()
+});
+exports.PaymentDetailsSchema = joi_1.default.object({
+    _id: joi_1.default.string().optional(),
+    type: joi_1.default.required()
 });
