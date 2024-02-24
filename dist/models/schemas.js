@@ -16,7 +16,6 @@ exports.AttendeeSchema = joi_1.default.object({
 });
 exports.FamilySchema = joi_1.default.object({
     _id: joi_1.default.string().optional(),
-    attendeeID: joi_1.default.string().required(),
     attendeeName: joi_1.default.string().required(),
     spouseName: joi_1.default.string().required(),
     numChildren: joi_1.default.number().required()

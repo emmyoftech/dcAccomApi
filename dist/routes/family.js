@@ -46,12 +46,14 @@ FamilyRoute.route("/")
     }
     else {
         (0, db_1.db_run)((database) => __awaiter(void 0, void 0, void 0, function* () {
-            yield FamilyTable(database).insertOne(family);
-        })).then(() => {
-            res.status(200).send("Family registered successfully");
-        }).catch(() => {
-            res.status(400).send("Failed to register family");
-        });
+            const { insertedId } = yield FamilyTable(database).insertOne(family);
+            if (insertedId) {
+                res.status(201).send("family was registered successfully");
+            }
+            else {
+                res.status(400).send("failed to register family");
+            }
+        }));
     }
 });
 FamilyRoute.route("/:id")
