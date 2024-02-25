@@ -28,7 +28,8 @@ exports.GroupSchema = joi_1.default.object({
 });
 exports.AccomodationSchema = joi_1.default.object({
     _id: joi_1.default.string().optional(),
-    attendeeID: joi_1.default.string().required(),
+    attendeeName: joi_1.default.string().required(),
+    attendeeEmail: joi_1.default.string().required(),
     accommodationType: joi_1.default.string().required()
 });
 exports.PaymentDetailsSchema = joi_1.default.object({
