@@ -25,4 +25,7 @@ app.use("/family", family_1.default);
 app.use("/group", group_1.default);
 app.use("/accomodation", accomodation_1.default);
 app.use("/paymentdetails", paymentdetails_1.default);
+app.get("/", (req, res) => {
+    res.status(200).send("hello");
+});
 app.listen((_b = process.env.PORT) !== null && _b !== void 0 ? _b : 4000, () => { var _a; return console.log((_a = "listening on port " + process.env.PORT) !== null && _a !== void 0 ? _a : 4000 + "..."); });
